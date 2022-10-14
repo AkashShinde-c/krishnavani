@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Yatra+One&display=swap");
+.wordMeanings {
+  width: 22rem;
+  font-family: "Yatra One", cursive;
+
+}
+
+.heading {
+  width: 100%;
+  align-self: center;
+  font-family: "Yatra One", cursive;
+  margin-bottom: 0;
+}
+
+.shlokMeaning {
+  font-family: "Yatra One", cursive;
+}
+
+.commentary {
+  text-align: center;
+  margin-top: 2rem;
+  font-family: "Yatra One", cursive;
+}
+ 
