@@ -45,3 +45,9 @@
   width: 25rem;
   justify-content: space-between;
 }
+
+@media(max-width:900px){
+  .btnAlign{
+    width: 90%;
+  }
+}

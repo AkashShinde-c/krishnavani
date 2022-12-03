@@ -87,13 +87,13 @@ export default function GetShlok(props) {
     <>
     <div className="btnAlign">
       <button className="GetShlok_Button" onClick={() => prevShlok()}>
-      &lt;= Shlok 
+      &lt;Prev shlok 
       </button>
       <button className="GetShlok_Button" onClick={() => fetchShlok()}>
         Shlokastra
       </button>
       <button className="GetShlok_Button" onClick={() => nextShlok()}>
-      Shlok =&gt;
+      Next shlok&gt;
       </button>
       </div>
     </>

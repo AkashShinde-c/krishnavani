@@ -4,7 +4,7 @@ import '../App'
 import '../CSS/Shlokdisplay.css'
 
 export const Shlokdisplay = (props) => {
-  return (
+  return (props.shlok_no)?(
      <>        
         <div className="shlok__no"> 
           {props.shlok_no} <br />
@@ -19,5 +19,5 @@ export const Shlokdisplay = (props) => {
       
         </>
 
-  )
+  ):"";
 }

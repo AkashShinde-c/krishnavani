@@ -1,5 +1,21 @@
- 
+@import url("https://fonts.googleapis.com/css2?family=Yatra+One&display=swap");
+
+
 #root{
     scroll-behavior: smooth;
-    display: contents;
+    margin: 0;
+    padding: 0;
+    /* display: contents; */
+    position: absolute;
+    font-family: "Yatra One", cursive;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+@media(max-width:950px){
+    html{
+        font-size: 55%;
+    }
+
 }

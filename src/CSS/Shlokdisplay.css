@@ -11,3 +11,9 @@
     font-family: "Yatra One", cursive;
     
 }
+
+@media(max-width:900px){
+    .shlok__no{
+        margin-top: 0;
+    }
+}

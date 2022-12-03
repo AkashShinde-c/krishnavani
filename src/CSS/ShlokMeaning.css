@@ -22,3 +22,14 @@
   font-family: "Yatra One", cursive;
 }
  
+
+@media (max-width:900px) {
+  
+  .heading{
+
+  }
+
+  .commentary{
+    margin-top: 0;
+  }
+}

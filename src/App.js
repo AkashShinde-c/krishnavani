@@ -8,6 +8,7 @@ import background from "./img/background2.jpg";
 import "./fonts/KANIKABI.ttf";
 import NavBar from "./Components/NavBar";
 import SpecificShlok from "./Components/SpecificShlok";
+import Footer from "./Components/Footer";
 
 function App() {
   var [shlok, setShlok] = useState("");
@@ -15,8 +16,8 @@ function App() {
   var [translation, setTranslation] = useState("");
   var [word_meanings, setWordMeanings] = useState("");
   var [commentaries, setCommentaries] = useState("");
-  var [trigger, setTrigger] = useState(false);
-  var [chapter,setChapter] = useState(1);
+  var [trigger, setTrigger] = useState();
+  var [chapter, setChapter] = useState(1);
   var [slok, setSlok] = useState(1);
   var sendShlok = (
     GetShlok_shlok,
@@ -32,36 +33,46 @@ function App() {
     setCommentaries(GetShlok_Commentary);
   };
 
-  var sendSlok = (chapter, slok) => {
-    setChapter(chapter)
-    setSlok(slok)
-  }
+  var sendSlok = (chapter, slok, trigger) => {
+    setChapter(chapter);
+    setSlok(slok);
+    setTrigger(trigger);
+  };
   var sendTrigger = (trigger) => {
-    setTrigger(trigger)
+    setTrigger(trigger);
   };
   return (
     <>
-      <NavBar sendTrigger = {sendTrigger}/>
-      <SpecificShlok trigger = {trigger} sendShlok = {sendShlok} sendSlok = {sendSlok}></SpecificShlok>
+      <NavBar sendTrigger={sendTrigger} />
+      <SpecificShlok
+        trigger={trigger}
+        sendShlok={sendShlok}
+        sendSlok={sendSlok}
+        sendTrigger = {sendTrigger}
+      ></SpecificShlok>
       <div className="mainContainer">
-      <GetShlok sendShlok={sendShlok} chapter = {chapter} slok = {slok} />
+        <GetShlok sendShlok={sendShlok} chapter={chapter} slok={slok} />
         <div className="paper">
-          <div className="part1">
-            <Shlokdisplay
-              shlok_no={shlok_no}
-              shlok={shlok}
-              word_meanings={word_meanings}
-            />  
-          </div>
-          <div className="part2">
-            <ShlokMeaning
-              translation={translation} />
+          <div className="subPaper">
+            <div className="part1">
+              <Shlokdisplay
+                shlok_no={shlok_no}
+                shlok={shlok}
+                word_meanings={word_meanings}
+              />
+            </div>
+            <div className="part2">
+              <ShlokMeaning translation={translation} />
+            </div>
           </div>
         </div>
         <div className="paper">
-          <ShlokMeaning commentary={commentaries} />
+          <div className="subPaper">
+            <ShlokMeaning commentary={commentaries} />
+          </div>
         </div>
       </div>
+      
     </>
   );
 }
