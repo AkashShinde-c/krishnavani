@@ -1,19 +1,28 @@
-import React from 'react'
-import '../CSS/NavBar.css'
-import SpecificShlok from './SpecificShlok'
-var toggle = false
-export default function navBar({sendTrigger}) {
+import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import "../CSS/NavBar.css";
+import Menu from "./Menu";
+import SpecificShlok from "./SpecificShlok";
 
-  function setTrigger(){
-    toggle?toggle = false: toggle = true;
-    sendTrigger(toggle)
+export default function NavBar(props) {
+  var [languageNav, setLanguageNav] = useState("Hindi");
+  var toggle = false;
+
+  useEffect(() => {
+    props.setLanguageApp(languageNav);
+  }, [languageNav]);
+
+  function setTrigger() {
+    toggle ? (toggle = false) : (toggle = true);
+    props.sendTrigger(toggle);
   }
   return (
     <>
-        <div className="navBar">
-          <h1>KRISHNAVANI</h1>
-          <button className='searchShlok' onClick={()=>setTrigger()}>Search Shlok</button>
-        </div>
+      <div className="navBar">
+        <h1>KRISHNAVANI</h1>
+        <Menu setTrigger={setTrigger} setLanguageNav={setLanguageNav}></Menu>
+      </div>
     </>
-  )
+  );
 }
