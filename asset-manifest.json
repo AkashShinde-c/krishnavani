@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/krishnavani/static/css/main.622be289.css",
-    "main.js": "/krishnavani/static/js/main.3d624bff.js",
+    "main.js": "/krishnavani/static/js/main.62ae55a0.js",
     "static/media/backg2.jpg": "/krishnavani/static/media/backg2.8b033f4ea65ba3305319.jpg",
     "static/media/background2.jpg": "/krishnavani/static/media/background2.91d20f5bb2c9258e5ffa.jpg",
     "static/media/KANIKABI.ttf": "/krishnavani/static/media/KANIKABI.e1748e87f52ad461e390.ttf",
     "static/media/logo.svg": "/krishnavani/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/krishnavani/index.html",
     "main.622be289.css.map": "/krishnavani/static/css/main.622be289.css.map",
-    "main.3d624bff.js.map": "/krishnavani/static/js/main.3d624bff.js.map"
+    "main.62ae55a0.js.map": "/krishnavani/static/js/main.62ae55a0.js.map"
   },
   "entrypoints": [
     "static/css/main.622be289.css",
-    "static/js/main.3d624bff.js"
+    "static/js/main.62ae55a0.js"
   ]
 }
