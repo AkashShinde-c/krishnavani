@@ -16,12 +16,12 @@ body {
   font-family: 'Kanika';
   position: relative;
   color: rgb(0, 0, 0);
-  
+  overflow: hidden;
   
 }
 
-.paper{
-  display: flex;
+.paper,.paper2{
+ 
   flex-direction: column;
   align-items: center;
   padding: 2rem 4.8rem 5rem 4.8rem;
@@ -31,7 +31,9 @@ body {
   background-size: 100% 100%;
   overflow: auto;
 }
-
+.paper{
+  display: flex;
+}
 .subPaper{
   display: flex;
   flex-direction: column;
@@ -55,6 +57,7 @@ body {
   .mainContainer{
     position: relative;
     margin: 0;
+    justify-content: flex-start;
     padding: 0;
     top: 0;
     right: 0;
@@ -68,7 +71,12 @@ body {
 
   .subPaper{
     width: 80%;
+    font-size: 1.5rem;
     padding: 3rem 0 3rem 0;
   }
-
+  .paper2{
+    background-image: linear-gradient(24deg, #81470c00, #986125, #af7d3e, #c59958, #dcb674);
+    width: 100%;
+    
+  }
 }

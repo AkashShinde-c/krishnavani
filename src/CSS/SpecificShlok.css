@@ -54,6 +54,7 @@ html{
 .shlokBtn,.chapterBtn,.backBtn{
   background-color: #81470cd9;
   width: 4rem;
+  color: white;
   height: 4rem;
   margin-right: 1rem;
   margin-left: 1rem;

@@ -2,10 +2,10 @@
 .wordMeanings {
   width: 22rem;
   font-family: "Yatra One", cursive;
-
 }
 
-.heading {
+.heading,
+.headingSD {
   width: 100%;
   align-self: center;
   font-family: "Yatra One", cursive;
@@ -19,17 +19,23 @@
 .commentary {
   text-align: center;
   margin-top: 2rem;
+
   font-family: "Yatra One", cursive;
 }
  
 
-@media (max-width:900px) {
-  
-  .heading{
+@media (max-width: 900px) {
+  .headingSD {
+    text-align: center;
+    background-color: #81460c;
+    border-radius: 5px;
+    margin-top: -2rem;
 
+    margin-bottom: 2rem;
   }
 
-  .commentary{
+  .commentary {
     margin-top: 0;
+    text-align: justify;
   }
 }

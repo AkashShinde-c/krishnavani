@@ -52,6 +52,8 @@ export default function GetShlok(props) {
     }
   }, [props.language]);
 
+
+  useEffect(()=>{if(props.start === "Changed"){nextShlok()}},[props.start]);
   async function fetchShlok() {
     chapter = Math.floor(Math.random() * 17) + 1;
     slok = Math.floor(Math.random() * slokcount[chapter - 1]) + 1;
@@ -91,6 +93,7 @@ export default function GetShlok(props) {
       chapter += 1;
       slok = 1;
     }
+    
     console.log(chapter + "/" + slok);
     url = `https://bhagavad-gita3.p.rapidapi.com/v2/chapters/${chapter}/verses/${slok}/`;
     await axios.get(url, options).then((response) => {
@@ -123,7 +126,6 @@ export default function GetShlok(props) {
   }
 
   async function prevShlok() {
-    console.log(chapter);
     slok -= 1;
     if (slok < 1) {
       chapter -= 1;
@@ -171,6 +173,7 @@ export default function GetShlok(props) {
         <button className="GetShlok_Button" onClick={() => nextShlok()}>
           Next shlok&gt;
         </button>
+         
       </div>
     </>
   );

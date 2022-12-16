@@ -9,7 +9,7 @@ import "./fonts/KANIKABI.ttf";
 import NavBar from "./Components/NavBar";
 import SpecificShlok from "./Components/SpecificShlok";
 import Footer from "./Components/Footer";
-import Menu from "./Components/Menu"
+import Menu from "./Components/Menu";
 var L = "Hindi";
 function App() {
   var [shlok, setShlok] = useState("");
@@ -21,8 +21,10 @@ function App() {
   var [chapter, setChapter] = useState(1);
   var [slok, setSlok] = useState(1);
   var [languageApp, setLanguageApp] = useState("Hindi");
-  
-   
+  var [initial, setInitial] = useState("none");
+  var [start, setStart] = useState("");
+  var [initialHeight, setInitialHeight] = useState("100vh");
+
   var sendShlok = (
     GetShlok_shlok,
     GetShlok_Number,
@@ -43,25 +45,39 @@ function App() {
     setTrigger(trigger);
   };
 
-   
   var sendTrigger = (trigger) => {
     setTrigger(trigger);
   };
-  
+
+  useEffect(() => {
+    if (commentaries) {
+      setInitial("flex");
+      setInitialHeight("fit-content")
+      console.log(commentaries);
+    }
+  }, [commentaries]);
+
   return (
     <>
-      <NavBar sendTrigger={sendTrigger} setLanguageApp = {setLanguageApp}>
-       
-      </NavBar>
+      <NavBar
+        sendTrigger={sendTrigger}
+        setLanguageApp={setLanguageApp}
+      ></NavBar>
       <SpecificShlok
         trigger={trigger}
         sendShlok={sendShlok}
         sendSlok={sendSlok}
-        sendTrigger = {sendTrigger}
-        language = {languageApp}
+        sendTrigger={sendTrigger}
+        language={languageApp}
       ></SpecificShlok>
-      <div className="mainContainer">
-        <GetShlok sendShlok={sendShlok} chapter={chapter} slok={slok} language = {languageApp} />
+      <div className="mainContainer" style = {{height: initialHeight}}>
+        <GetShlok
+          sendShlok={sendShlok}
+          chapter={chapter}
+          slok={slok}
+          language={languageApp}
+          start = {start}
+        />
         <div className="paper">
           <div className="subPaper">
             <div className="part1">
@@ -72,17 +88,16 @@ function App() {
               />
             </div>
             <div className="part2">
-              <ShlokMeaning translation={translation} />
+              <ShlokMeaning translation={translation} setStart = {setStart} setInitialHeight = {setInitialHeight}/>
             </div>
           </div>
         </div>
-        <div className="paper">
+        <div className="paper2" style={{ display: initial }}>
           <div className="subPaper">
             <ShlokMeaning commentary={commentaries} />
           </div>
         </div>
       </div>
-      
     </>
   );
 }

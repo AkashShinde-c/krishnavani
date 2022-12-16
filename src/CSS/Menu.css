@@ -2,6 +2,18 @@
   display: none;
 }
 
+.blurrOn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+}
+
+.blurrOff{
+  height: 0;
+}
 .searchShlok {
   background-color: #81460c;
   border: 1px solid transparent;
@@ -34,6 +46,7 @@
   transition: width 0.2s;
   position: absolute;
   right: 1rem;
+  top: 1rem;
   display: inline-flex;
   width: 35rem;
   align-items: center;
@@ -66,7 +79,7 @@ label:after {
   height: 1.3rem;
   background: #fff;
   border-radius: 90px;
-  transition: 0.3s;
+  transition: 0.1s;
 }
 
 input:checked + label {
@@ -182,7 +195,7 @@ label:active:after {
     border-radius: 100px;
     position: relative;
   }
-  
+
   label:after {
     content: "";
     position: absolute;
@@ -191,18 +204,18 @@ label:active:after {
     height: 2rem;
     background: #fff;
     border-radius: 90px;
-    transition: 0.3s;
+    transition: 0.1s;
   }
-  
+
   input:checked + label {
     background: #81460c;
   }
-  
+
   input:checked + label:after {
     left: calc(100%);
     transform: translateX(-100%);
   }
-  
+
   label:active:after {
     width: 3rem;
   }

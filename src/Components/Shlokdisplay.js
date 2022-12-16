@@ -1,5 +1,4 @@
 import React from 'react'
-import krishna from '../img/krishna.png'
 import '../App'
 import '../CSS/Shlokdisplay.css'
 

@@ -6,7 +6,7 @@ export default function ShlokMeaning(props) {
     return props.commentary ? (
       <>
         <div className="commentary">
-          <p className="heading">Shlok Description</p>
+          <p className="headingSD">Shlok Description</p>
           {props.commentary}
         </div>
       </>
@@ -23,12 +23,23 @@ export default function ShlokMeaning(props) {
       </>
     ) : (
       <>
-        <p className="shlok__text" style={{ fontSize: "3.7rem" }}>||</p>
-        <p className="shlok__text" style={{ fontSize: "3.7rem" }}>
-          || श्रीभगवानुवाच ||
+        {/* <p className="shlok__text" style={{ fontSize: "3.7rem" }}>
+          ||
+        </p> */}
+        <p className="shlok__text" style={{ fontSize: "3.4rem" }}>
+          || श्रीमदभगवदगीता ||
         </p>
-        <p className="shlok__text" style={{ fontSize: "3.7rem" }}>||</p>
-        <p className="shlok__text">Created By - Akash Shinde</p> <p className="shlok__text">Email - shindeakashak47@gmail.com</p>
+        {/* <p className="shlok__text" style={{ fontSize: "3.7rem" }}>
+          ||
+        </p> */}
+        <button
+          className="GetShlok_Button"
+          onClick={() => (props.setStart("Changed")/*, props.setInitialHeight("fit-content")*/)}
+        >
+          Start Reading
+        </button>
+        <p className="shlok__text">Created By - Akash Shinde</p>{" "}
+        <p className="shlok__text">Email - shindeakashak47@gmail.com</p>
       </>
     );
   }
